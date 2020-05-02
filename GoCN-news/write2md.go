@@ -17,7 +17,8 @@ func WriteToMd(newsList []string, newsUrlList []string, title string) {
 	_, err = f.WriteString("---\n")
 	_, err = f.WriteString("title: " + title + "\n")
 	_, err = f.WriteString("date: " + time.Unix(todayTimestamp, 0).Format("2006-01-02 15:04:05") + "\n")
-	_, err = f.WriteString("tags: - goNews\n")
+	_, err = f.WriteString("tags:\n")
+	_, err = f.WriteString("- goNews\n")
 	_, err = f.WriteString("---\n")
 	//完成后，延迟关闭
 	defer f.Close()
