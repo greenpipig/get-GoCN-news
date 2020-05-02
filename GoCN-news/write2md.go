@@ -9,7 +9,7 @@ import (
 func WriteToMd(newsList []string, newsUrlList []string, title string) {
 	todayTimestamp := time.Now().Unix()                               //获得时间戳
 	todayTimeStr := time.Unix(todayTimestamp, 0).Format("2006-01-02") //把时间戳转换成时间,并格式化为年月日
-	fileName := "./GOCN-news/" + todayTimeStr + "-" + "GOCN每日新闻"
+	fileName := "./GOCN-news/" + todayTimeStr + "-" + "GOCN每日新闻.md"
 	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatal("WriteToMd error")
@@ -28,5 +28,6 @@ func WriteToMd(newsList []string, newsUrlList []string, title string) {
 		if err != nil {
 			log.Infof("write file err %v", err)
 		}
+		f.WriteString("\n")
 	}
 }
