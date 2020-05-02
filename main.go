@@ -1,9 +1,17 @@
 package main
 
 import (
+	"get-GoCN-news/GoCN-news"
 	"get-GoCN-news/getNews"
+	"get-GoCN-news/log"
 )
 
 func main() {
-	getNews.Fetch("https://gocn.vip/topics/node18")
+	url, title := getNews.FetchUrl("https://gocn.vip/topics/node18")
+	log.Infof("newsPageUrl:%s,newsPageTitle:%s", url, title)
+	if url == "" || title == "" {
+		return
+	}
+	newsList, newsUrlList := getNews.FetchTotalNew(url)
+	GoCN_news.WriteToMd(newsList, newsUrlList,title)
 }
