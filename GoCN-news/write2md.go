@@ -1,7 +1,7 @@
 package GoCN_news
 
 import (
-	"get-GoCN-news/log"
+	"github.com/greenpipig/get-GoCN-news/log"
 	"os"
 	"time"
 )

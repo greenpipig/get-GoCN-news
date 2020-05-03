@@ -3,7 +3,7 @@ package getNews
 import (
 	"fmt"
 	"log"
-	"src/github.com/anaskhan96/soup"
+	"github.com/anaskhan96/soup"
 	"time"
 )
 
