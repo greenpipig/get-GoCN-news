@@ -17,13 +17,13 @@ func PathExists(path string) (bool, error) {
 	return false, err
 }
 
-func WriteToMd(newsList []string, newsUrlList []string, title string) {
+func WriteToMd(newsList []string, newsUrlList []string, title string) bool {
 	todayTimestamp := time.Now().Unix()                               //获得时间戳
 	todayTimeStr := time.Unix(todayTimestamp, 0).Format("2006-01-02") //把时间戳转换成时间,并格式化为年月日
 	fileName := "./GOCN-news/" + todayTimeStr + "-" + "GOCN每日新闻.md"
 	exist, _ := PathExists(fileName)
 	if exist {
-		return
+		return exist
 	} else {
 		f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 		if err != nil {
@@ -45,6 +45,7 @@ func WriteToMd(newsList []string, newsUrlList []string, title string) {
 			}
 			f.WriteString("\n")
 		}
+		return true
 	}
 
 }

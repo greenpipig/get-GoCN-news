@@ -14,7 +14,10 @@ func mainFunc() {
 		return
 	}
 	newsList, newsUrlList := getNews.FetchTotalNew(url)
-	GoCN_news.WriteToMd(newsList, newsUrlList, title)
+	judgeFirst:=GoCN_news.WriteToMd(newsList, newsUrlList, title)
+	if judgeFirst{
+
+	}
 }
 
 func main() {
