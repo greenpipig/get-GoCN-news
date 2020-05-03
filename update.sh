@@ -1,6 +1,6 @@
 time=$(date "+%Y-%m-%d")
 title="-GOCN每日新闻.md"
-git add .
+git add GoCN-news
 git commit -m "update news"
 git push origin master
 # shellcheck disable=SC2164
