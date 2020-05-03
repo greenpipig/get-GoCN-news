@@ -23,7 +23,7 @@ func WriteToMd(newsList []string, newsUrlList []string, title string) bool {
 	fileName := "./GOCN-news/" + todayTimeStr + "-" + "GOCN每日新闻.md"
 	exist, _ := PathExists(fileName)
 	if exist {
-		return exist
+		return false
 	} else {
 		f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 		if err != nil {
