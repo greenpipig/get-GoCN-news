@@ -58,3 +58,20 @@ func Fatal(message interface{}) {
 	Logging.Fatal(message)
 	wg.Done()
 }
+
+func Panicf(message string, format ...interface{}) {
+	wg.Wait()
+	wg.Add(1)
+	f, err := os.OpenFile("test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	//完成后，延迟关闭
+	defer f.Close()
+	// 设置日志输出到文件
+	log.SetOutput(f)
+	// 写入日志内容
+	Logging := log.New(f, "TRACE: ", log.Ldate|log.Ltime)
+	Logging.Panicf(message, format...)
+	wg.Done()
+}

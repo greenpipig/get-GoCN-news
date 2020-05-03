@@ -28,15 +28,18 @@ func FetchUrl(url string) (newsUrl string, title string) {
 	todayTimeStr := time.Unix(todayTimestamp, 0).Format("2006-01-02") //把时间戳转换成时间,并格式化为年月日
 	wantNewTitleEn := "GOCN 每日新闻 (" + todayTimeStr + ")"
 	wantNewTitleCN := "GOCN 每日新闻（" + todayTimeStr + "）"
+	wantNewTitleEn1 := "GoCN 每日新闻 (" + todayTimeStr + ")"
+	wantNewTitleCN1 := "GoCN 每日新闻（" + todayTimeStr + "）"
 	for _, root := range doc.FindAllStrict("div", "class", "title media-heading") {
 		newsUrl, _ = root.Find("a").Attrs()["href"]
 		newsTitle, _ = root.Find("a").Attrs()["title"]
 		message := root.Find("span", "class", "node").Text()
-		if message == "每日新闻" && (newsTitle == wantNewTitleEn || newsTitle == wantNewTitleCN) {
+		fmt.Println(newsTitle)
+		if message == "每日新闻" && (newsTitle == wantNewTitleEn || newsTitle == wantNewTitleCN || newsTitle == wantNewTitleEn1 || newsTitle == wantNewTitleCN1) {
 			return newsUrl, newsTitle
 		}
 	}
-	return newsUrl, newsTitle
+	return "", ""
 }
 
 func FetchTotalNew(newsUrl string) (newsList []string, newsUrlList []string) {
