@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github.com/greenpipig/get-GoCN-news/GoCN-news"
 	"github.com/greenpipig/get-GoCN-news/getNews"
 	"github.com/greenpipig/get-GoCN-news/log"
+	"os/exec"
 	"time"
 )
 
@@ -16,7 +18,13 @@ func mainFunc() {
 	newsList, newsUrlList := getNews.FetchTotalNew(url)
 	judgeFirst:=GoCN_news.WriteToMd(newsList, newsUrlList, title)
 	if judgeFirst{
-
+		command := `./update.sh`
+		cmd := exec.Command("/bin/bash", "-c", command)
+		_, err := cmd.Output()
+		if err != nil {
+			fmt.Printf("Execute Shell:%s failed with error:%s", command, err.Error())
+			return
+		}
 	}
 }
 
