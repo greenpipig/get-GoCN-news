@@ -7,6 +7,12 @@ https://github.com/anaskhan96/soup
 
 博客框架：hexo
 
+### 特性
+
+支持每天定时爬取
+
+自动推送到hexo页面上
+
 ### 效果展示：
 
 https://greenpipig.github.io/
@@ -15,7 +21,7 @@ https://greenpipig.github.io/
 
 首先修改update.sh中的路径文件，修改为自己的博客路径
 
-每次检索时间为6小时一次
+每次检索时间为3小时一次
 
 go build main.go
 
