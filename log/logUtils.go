@@ -8,10 +8,12 @@ import (
 
 var wg sync.WaitGroup
 
+var fileName = "GoCN-news.log"
+
 func Info(message interface{}) {
 	wg.Wait()
 	wg.Add(1)
-	f, err := os.OpenFile("test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -28,7 +30,7 @@ func Info(message interface{}) {
 func Infof(message string, format ...interface{}) {
 	wg.Wait()
 	wg.Add(1)
-	f, err := os.OpenFile("test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -45,7 +47,7 @@ func Infof(message string, format ...interface{}) {
 func Fatal(message interface{}) {
 	wg.Wait()
 	wg.Add(1)
-	f, err := os.OpenFile("test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -62,7 +64,7 @@ func Fatal(message interface{}) {
 func Panicf(message string, format ...interface{}) {
 	wg.Wait()
 	wg.Add(1)
-	f, err := os.OpenFile("test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
