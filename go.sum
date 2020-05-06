@@ -2,6 +2,8 @@ github.com/anaskhan96/soup v1.1.1 h1:Duux/0htS2Va7XLJ9qIakCSey790hg9OFRm2FwlMTy0
 github.com/anaskhan96/soup v1.1.1/go.mod h1:pT5vs4HXDwA5y4KQCsKvnkpQd3D+joP7IqpiGskfWW0=
 github.com/greenpipig/get-GoCN-news v0.0.0-20200504074518-d9103678d4ee h1:Ky1mGSdvxOcpckssiQJXrszJrjWJ2KA8nWLLqXYo02o=
 github.com/greenpipig/get-GoCN-news v0.0.0-20200504074518-d9103678d4ee/go.mod h1:xBci8b+zn35UcYxIB9pHKuNYzYIfZ0SSlRfjGK5Kdl8=
+github.com/greenpipig/soup v1.1.1 h1:zeL1hHAs2jcg+T6gL3dnrd/LTR3S8YKV5NxrJJzxzUQ=
+github.com/greenpipig/soup v1.1.1/go.mod h1:HmLuMFGc4mAtpiBWbUhmECBKRx4U4mu641n65dzKTcE=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20200501053045-e0ff5e5a1de5 h1:WQ8q63x+f/zpC8Ac1s9wLElVoHhm32p6tudrU72n1QA=
 golang.org/x/net v0.0.0-20200501053045-e0ff5e5a1de5/go.mod h1:qpuaurCH72eLCgpAm/N6yyVIVM9cpaDIP3A8BGJEC5A=

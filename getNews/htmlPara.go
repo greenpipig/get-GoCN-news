@@ -2,8 +2,9 @@ package getNews
 
 import (
 	"fmt"
-	"log"
-	"github.com/anaskhan96/soup"
+	"github.com/greenpipig/soup"
+	"get-GoCN-news/log"
+	//"github.com/anaskhan96/soup"
 	"time"
 )
 
