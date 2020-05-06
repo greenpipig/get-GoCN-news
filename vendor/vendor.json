@@ -1,0 +1,25 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "AHyOPFhzk8Q7xnKJtdSbOmBmzZg=",
+			"path": "github.com/greenpipig/soup",
+			"revision": "b50f4923c2f93fe5ddf7be743f66a6de18d89bb5",
+			"revisionTime": "2020-05-06T08:30:17Z"
+		},
+		{
+			"checksumSHA1": "ozmp2tE2nJYZxhYAj0VwHS0Vz1U=",
+			"path": "golang.org/x/net/html",
+			"revision": "d3edc9973b7eb1fb302b0ff2c62357091cea9a30",
+			"revisionTime": "2020-03-24T14:35:11Z"
+		},
+		{
+			"checksumSHA1": "XtSbs1gpyaEsIqf6VRhJsgOQe5U=",
+			"path": "golang.org/x/net/html/atom",
+			"revision": "d3edc9973b7eb1fb302b0ff2c62357091cea9a30",
+			"revisionTime": "2020-03-24T14:35:11Z"
+		}
+	],
+	"rootPath": "github.com/greenpipig/get-GoCN-news"
+}

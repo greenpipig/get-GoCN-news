@@ -2,7 +2,7 @@ package getNews
 
 import (
 	"fmt"
-	"get-GoCN-news/log"
+	"github.com/greenpipig/get-GoCN-news/log"
 	"github.com/greenpipig/soup"
 	//"github.com/anaskhan96/soup"
 	"time"

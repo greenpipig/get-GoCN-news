@@ -1,10 +1,10 @@
 package main
 
 import (
-	"get-GoCN-news/GoCN-news"
-	"get-GoCN-news/cron"
-	"get-GoCN-news/getNews"
-	"get-GoCN-news/log"
+	"github.com/greenpipig/get-GoCN-news/GoCN-news"
+	"github.com/greenpipig/get-GoCN-news/cron"
+	"github.com/greenpipig/get-GoCN-news/getNews"
+	"github.com/greenpipig/get-GoCN-news/log"
 	"os/exec"
 	"time"
 )

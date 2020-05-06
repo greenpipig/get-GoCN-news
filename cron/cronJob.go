@@ -1,7 +1,7 @@
 package cron
 
 import (
-	"get-GoCN-news/log"
+	"github.com/greenpipig/get-GoCN-news/log"
 	"math/rand"
 	"time"
 )
