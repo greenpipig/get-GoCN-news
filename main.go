@@ -29,5 +29,5 @@ func mainFunc() {
 }
 
 func main() {
-	cron.ReloadJob("update mdFile", mainFunc, 1*time.Minute)
+	cron.ReloadJob("update mdFile", mainFunc, 1*time.Hour)
 }
