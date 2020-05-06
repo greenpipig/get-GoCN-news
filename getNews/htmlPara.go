@@ -2,8 +2,8 @@ package getNews
 
 import (
 	"fmt"
-	"github.com/greenpipig/soup"
 	"get-GoCN-news/log"
+	"github.com/greenpipig/soup"
 	//"github.com/anaskhan96/soup"
 	"time"
 )
@@ -52,10 +52,25 @@ func FetchTotalNew(newsUrl string) (newsList []string, newsUrlList []string) {
 	newsList = make([]string, 0, 10)
 	newsUrlList = make([]string, 0, 10)
 	for _, root1 := range root.FindAll("li") {
-		news := root1.Text()
-		newsList = append(newsList, news)
-		newsUrl := root1.Find("a", "rel", "nofollow").Text()
-		newsUrlList = append(newsUrlList, newsUrl)
+		err := ""
+		func() {
+			defer func() {
+				if r := recover(); r != nil {
+					err = "解析错误"
+				}
+			}()
+			news := root1.Text()
+			newsList = append(newsList, news)
+			newsUrl := root1.Find("a", "rel", "nofollow").Text()
+			newsUrlList = append(newsUrlList, newsUrl)
+		}()
+		if err != "" {
+			if len(newsList)>len(newsUrlList){
+				newsUrlList=append(newsUrlList,"")
+			}
+			continue
+		}
+
 	}
 	return newsList, newsUrlList
 }
