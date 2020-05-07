@@ -65,8 +65,8 @@ func FetchTotalNew(newsUrl string) (newsList []string, newsUrlList []string) {
 			newsUrlList = append(newsUrlList, newsUrl)
 		}()
 		if err != "" {
-			if len(newsList)>len(newsUrlList){
-				newsUrlList=append(newsUrlList,"")
+			if len(newsList) > len(newsUrlList) {
+				newsUrlList = append(newsUrlList, "")
 			}
 			continue
 		}

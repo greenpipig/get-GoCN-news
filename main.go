@@ -12,14 +12,14 @@ import (
 
 var fileName = "GoCN-news.log"
 
-func init(){
-	f, err:= os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0664)
+func init() {
+	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0664)
 	if err != nil {
 		log.Fatal(err)
 	}
 	log.SetPrefix("TRACE: ")
 	log.SetOutput(f)
-	log.SetFlags(log.Ldate|log.Ltime|log.Lshortfile)
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 }
 
 func mainFunc() {
