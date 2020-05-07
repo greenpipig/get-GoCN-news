@@ -1,6 +1,8 @@
 # get-GoCN-news
 爬取获得gocn的新闻，并同步到博客，每日更新从我做起
 
+具体部署方法：https://blog.csdn.net/weixin_44024220/article/details/105960728
+
 ### 参考库：
 
 https://github.com/anaskhan96/soup
