@@ -4,14 +4,27 @@ import (
 	"github.com/greenpipig/get-GoCN-news/GoCN-news"
 	"github.com/greenpipig/get-GoCN-news/cron"
 	"github.com/greenpipig/get-GoCN-news/getNews"
-	"github.com/greenpipig/get-GoCN-news/log"
+	"log"
+	"os"
 	"os/exec"
 	"time"
 )
 
+var fileName = "GoCN-news.log"
+
+func init(){
+	f, err:= os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0664)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.SetPrefix("TRACE: ")
+	log.SetOutput(f)
+	log.SetFlags(log.Ldate|log.Ltime|log.Lshortfile)
+}
+
 func mainFunc() {
 	url, title := getNews.FetchUrl("https://gocn.vip/topics/node18")
-	log.Infof("newsPageUrl:%s,newsPageTitle:%s", url, title)
+	log.Printf("newsPageUrl:%s,newsPageTitle:%s", url, title)
 	if url == "" || title == "" {
 		return
 	}
@@ -22,7 +35,7 @@ func mainFunc() {
 		cmd := exec.Command("/bin/bash", "-c", command)
 		_, err := cmd.Output()
 		if err != nil {
-			log.Infof("Execute Shell:%s failed with error:%s", command, err.Error())
+			log.Printf("Execute Shell:%s failed with error:%s", command, err.Error())
 			return
 		}
 	}

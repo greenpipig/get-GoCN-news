@@ -1,14 +1,14 @@
 package cron
 
 import (
-	"github.com/greenpipig/get-GoCN-news/log"
+	"log"
 	"math/rand"
 	"time"
 )
 
 func ReloadJob(jobName string, reloadFunc func(), intervalTime time.Duration) {
 	defer func() {
-		log.Panicf("[cron_job]%s,fail", jobName)
+		log.Printf("[cron_job]%s,fail", jobName)
 		recover()
 	}()
 	// 先随机sleep一段时间, [0, 1000)毫秒

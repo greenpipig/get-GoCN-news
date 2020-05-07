@@ -1,7 +1,7 @@
 package GoCN_news
 
 import (
-	"github.com/greenpipig/get-GoCN-news/log"
+	"log"
 	"os"
 	"time"
 )
@@ -38,10 +38,10 @@ func WriteToMd(newsList []string, newsUrlList []string, title string) bool {
 		//完成后，延迟关闭
 		defer f.Close()
 		for index, news := range newsList {
-			log.Infof("news is:%s,url is:%s", news, newsUrlList[index])
+			log.Printf("news is:%s,url is:%s", news, newsUrlList[index])
 			_, err = f.WriteString(news + ":" + newsUrlList[index] + "\n")
 			if err != nil {
-				log.Infof("write file err %v", err)
+				log.Fatal("write file err %v", err)
 			}
 			f.WriteString("\n")
 		}
