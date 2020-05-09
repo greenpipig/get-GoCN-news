@@ -48,7 +48,7 @@ func FetchTotalNew(newsUrl string) (newsList []string, newsUrlList []string) {
 	fmt.Println(todayNewUrl)
 	doc := fetch(todayNewUrl)
 	roots := doc.FindAllStrict("div", "class", "card-body markdown markdown-toc")
-	root := roots[0].Find("ol")
+	root := roots[0].Find("ul")
 	newsList = make([]string, 0, 10)
 	newsUrlList = make([]string, 0, 10)
 	for _, root1 := range root.FindAll("li") {
